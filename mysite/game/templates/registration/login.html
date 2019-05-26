@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+<body>
+<h2>Login</h2>
+<form method="post">
+	{% csrf_token %}
+	{{form.as_p}} <!-- This enters the content of form under paragraph tag -->
+	 <button type="submit">Login</button>
+</form>
+</body>
+</html>

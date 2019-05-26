@@ -1,0 +1,14 @@
+{% extends 'game/base.html' %}
+{% block content %}
+{% if request.User.is_authenticated %}
+	{% for question in questions %}
+	<div class="entry">
+		<h2><a href="{% url 'detail' pk=question.pk %}"> Question number {{question.number}}</a></h2>
+		<p>{{question.text}}</p>
+	</div>	
+	{% endfor %}
+{% else %}
+	<p>You are not logged in</p>
+	<a href="{% url 'login' %}">login</a>
+{% endif %}		
+{% endblock %}

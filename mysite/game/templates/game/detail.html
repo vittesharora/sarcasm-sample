@@ -1,0 +1,24 @@
+{% extends 'game/base.html' %}
+{% load static %}
+{% block content %}
+{% if pk > 2 %}
+{% block extrahead%}
+<link rel="stylesheet" href="{% static 'css/game.css' %}">
+{% endblock %}
+	<div>
+		<h1>Here is your question {{pk}}</h1>
+		<div style="height:200px;width: 800px;background-color:lightgreen; margin-left: 18%; text-align: center; "><p id="detai">{{question.text}}</p><img src="{{question.qimage}}">
+	</div></div>
+
+
+{% elif pk <= 2 %}
+{% block extrahead2 %}
+<link rel="stylesheet" href="{% static 'css/pk<2.css' %}">
+{% endblock %}
+	<div>
+		<h1>Here is your question and answer{{pk}}</h1>
+		<div style="height:200px;width: 800px;background-color:orange; margin-left: 18%; text-align: center; "><p id="detai">{{question.text}}</p><img src="{{question.qimage}}"></div>
+	</div>
+{% endif %}
+
+{% endblock %}
