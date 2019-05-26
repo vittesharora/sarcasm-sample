@@ -1,6 +1,6 @@
 {% extends 'game/base.html' %}
 {% block content %}
-{% if request.User.is_authenticated %}
+<p>Welcome {{user.first_name}}</p>
 	{% for question in questions %}
 	<div class="entry">
 		<h2><a href="{% url 'detail' pk=question.pk %}"> Question number {{question.number}}</a></h2>

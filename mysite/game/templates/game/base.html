@@ -16,6 +16,7 @@
 <body>
     {% if request.user.is_authenticated %}
 	<h1>Welcome to SARCasm</h1>
+    <p>Welcome {{user.first_name}}</p>
 	{% block content%}
 	{% endblock %}
     {% endif %}
